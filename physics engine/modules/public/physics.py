@@ -42,6 +42,17 @@ class Physics:
         }
 
     def init_static_polygon(self, color, *points):
+        def init_polygon_lines():
+            return
+
+        lines = []
+        lenght = len(points)
+        for i in range(lenght):
+            if i == lenght-1:
+                lines.append((points[i], points[0]))
+            else:
+                lines.append((points[i], points[i+1]))
+
         return {
             "type": "polygon_floor",
             "points": points,
