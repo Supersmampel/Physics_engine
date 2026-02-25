@@ -22,11 +22,10 @@ drawer = Drawer(screen, background.color)
 physics = Physics(drawer)
 ball = Static_color(69, 173, 68)
 
-objects = [
-    physics.init_ball(-200, 0, 30),
-    physics.init_ball(200, 0, 30),
-    physics.init_static_polygon((0, 0, 0), (-800, -500), (800, -500), (0, -400))
-]
+objects = {
+    "balls": [physics.init_ball(-200, 0, 30), physics.init_ball(200, 0, 30)],
+    "polygons": [physics.init_static_polygon((0, 0, 0), (-800, -500), (800, -500), (0, -400))]
+}
 
 while running:
     for event in pygame.event.get():
